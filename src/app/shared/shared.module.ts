@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { MultimediaService } from '../multimedia/services/multimedia.service';
 
 
 
 @NgModule({
-  
+
   //MODULOS HIJOS A IMPORTAR PARA SER USADOS EN LOS exports:[] POR EL MODULO PADRE
   declarations: [
     SidebarComponent
@@ -23,7 +24,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 
   //AQUI VAN LOS SERVICIOS A INJECTAR EN LOS DEMÁS MODULOS
   providers:[
-    
+    MultimediaService
   ]
 })
 export class SharedModule { }

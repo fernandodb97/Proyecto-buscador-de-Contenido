@@ -1,11 +1,24 @@
- import { Component } from '@angular/core';
- 
+ import { Component, ElementRef, ViewChild } from '@angular/core';
+import { MultimediaService } from '../../services/multimedia.service';
+
  @Component({
     selector: 'multimedia-busqueda',
-    template: '<div class="col"><h5>Buscar:</h5><input type="text" class="form-control" placeholder="Buscar..."></div>'
+    template: '<div class="col"><h5>Buscar:</h5><input type="text" class="form-control" placeholder="Buscar..." (keyup.enter)="buscar()"#inputbuscar></div>'
  })
- 
+
  export class BusquedaComponent {
-    constructor() { }
- 
+
+  @ViewChild('inputbuscar')
+  public tagInput!: ElementRef<HTMLInputElement>
+  constructor(private multimediaservice:MultimediaService){}
+
+ buscar(){
+  const nuevotag = this.tagInput.nativeElement.value;
+  this.multimediaservice.buscarTag(nuevotag)
+  console.log(nuevotag)
+  this.tagInput.nativeElement.value=''
+
+
+
+ }
  }
