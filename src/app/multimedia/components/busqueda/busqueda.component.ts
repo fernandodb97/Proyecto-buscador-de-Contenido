@@ -10,7 +10,7 @@ import { MultimediaService } from '../../services/multimedia.service';
 
   @ViewChild('inputbuscar')
   public tagInput!: ElementRef<HTMLInputElement>
-  constructor(private multimediaservice:MultimediaService){}
+  
 
  buscar(){
   const nuevotag = this.tagInput.nativeElement.value;
@@ -18,7 +18,7 @@ import { MultimediaService } from '../../services/multimedia.service';
   console.log(nuevotag)
   this.tagInput.nativeElement.value=''
 
-
-
  }
+
+ constructor(private multimediaservice:MultimediaService){}
  }
