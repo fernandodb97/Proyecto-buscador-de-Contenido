@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { MultimediaModule } from './multimedia/multimedia.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { MultimediaModule } from './multimedia/multimedia.module';
   imports: [
     SharedModule,
     BrowserModule,
-    MultimediaModule
+    MultimediaModule,
+    HttpClientModule
 
   ],
   providers: [],

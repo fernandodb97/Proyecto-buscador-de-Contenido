@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MultimediaService } from '../multimedia/services/multimedia.service';
+import { MultimediaModule } from '../multimedia/multimedia.module';
 
 
 
@@ -14,7 +15,9 @@ import { MultimediaService } from '../multimedia/services/multimedia.service';
 
   //MODULOS IMPORTADOS CON FUNCIONES DE ANGULAR IMPORTANTES PARA SU USO
   imports: [
-    CommonModule
+    CommonModule,
+    MultimediaModule
+
   ],
 
   //AQUI VA EL MODULO PADRE DONDE SE VAN A UTILIZAR LOS MODULOS HIJOS declarations:[]

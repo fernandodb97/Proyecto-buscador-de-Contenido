@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Multimedia } from '../../interfaces/multi.interfaces';
 
 @Component({
   selector: 'app-listado',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./listado.component.css']
 })
 export class ListadoComponent {
+
+  @Input()
+  public multis: Multimedia[] = []  
 
 }

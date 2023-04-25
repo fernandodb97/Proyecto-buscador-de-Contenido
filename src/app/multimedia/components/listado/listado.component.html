@@ -1,15 +1,14 @@
 <div class="col-md-10 col-sm-10">
     <div class="card mb-2 text-center bg-dark">
 
-        <div class="card-body text-light">
-
-            <ul>
-              <li>Primero</li>
-              <li>Segundo</li>
-              <li>Tercero</li>
-              <li>Cuarto</li>
-              <li>Quinto</li>
-            </ul>
+        <div *ngFor="let m of multis" class="card-body text-light">
+            
+            <img [src]="m.images.downsized_medium.url" 
+                alt="m.title"
+                class="card-img-top"
+            >
+            <hr>
+            {{m.title}}
         </div>
     </div>
 </div>

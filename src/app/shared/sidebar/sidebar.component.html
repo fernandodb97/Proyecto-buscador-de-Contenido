@@ -4,9 +4,11 @@
 
 <!--LISTA DE OPCIONES-->
 
-    <a *ngFor="let tag of tags" href="#" class="list-group-item list-group-item-action">
-      {{ tag }}
-          </a>
+    <a *ngFor="let tag of tags" (click)="buscartag(tag)" class="list-group-item list-group-item-action">
+      <button>
+        {{ tag | titlecase}}
+      </button>
+    </a>
 
 
 <!--LISTA DE OPCIONES-->

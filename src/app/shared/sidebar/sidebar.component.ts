@@ -8,9 +8,14 @@ import { MultimediaService } from '../../multimedia/services/multimedia.service'
 })
 export class SidebarComponent {
 
-   get tags(){
+  get tags(){
     return this.multimediaservice.taghistorial;
   }
+
+  buscartag(tag:string){
+    this.multimediaservice.buscarTag(tag);
+  }
+
 
   constructor(private multimediaservice:MultimediaService){}
 
