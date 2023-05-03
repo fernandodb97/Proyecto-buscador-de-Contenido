@@ -29,12 +29,9 @@ export class MultimediaService {
 
     //021. SE AGREGA EÑ TAG AL HISTORIAL
     this._taghistorial.unshift(tag);
+    this.guardarlocalstorage();
+    
   }
-
-  
-
-  //023. SE UTILIZA CONSTRUCTOR PARA CREAR OBJETO http CON IMPORTACION HTTP
-  constructor(private http:HttpClient ) { }
 
   //011. SE OCUPA FUNCION get INTERNA PARA LLAMAR taghistorial
   get taghistorial() {
@@ -59,7 +56,7 @@ export class MultimediaService {
       .set('apikey', this.__apikey)
       .set('limit', '5')
       .set('q', tag)
-      
+ 
     //022. SE UTILIZA VARIABLE http
     //024. SE UTILIZA FUNCION get PARA BUSCAR DE LA INTERFAZ SearchResponse Y SUBSCRIBIRSE BAJO VARIABLES DEFINIDAS  
     this.http.get<SearchResponse>(`${this.serviceUrl}search`,{params}).subscribe(
@@ -72,4 +69,17 @@ export class MultimediaService {
     )
   }
 
+  private guardarlocalstorage():void{
+    localStorage.setItem('juana',JSON.stringify(this._taghistorial))
+  }
+
+  private cargarlocalstorage():void{
+    if(!localStorage.getItem('juana'))return;
+    this._taghistorial = JSON.parse(localStorage.getItem('juana')!);
+    this.buscarTag(this._taghistorial[0])
+  }
+  //023. SE UTILIZA CONSTRUCTOR PARA CREAR OBJETO http CON IMPORTACION HTTP
+  constructor(private http:HttpClient ) {
+    this.cargarlocalstorage();
+   }
 }
