@@ -1,6 +1,7 @@
 <div class="col-md-10 col-sm-10">
     <div class="card mb-2 text-center bg-dark">
 
+        <!--037. SE OCUPA DRIECTIVA FOR PARA DIVIDR EL ARREGLO DE OBJETOS multis-->
         <div *ngFor="let m of multis" class="card-body text-light">
             
             <img [src]="m.images.downsized_medium.url" 
@@ -8,6 +9,8 @@
                 class="card-img-top"
             >
             <hr>
+
+            <!--038. SE MUESTRA POR PANTALLA SOLO EL TITULO DE CADA GIF-->
             {{m.title}}
         </div>
     </div>

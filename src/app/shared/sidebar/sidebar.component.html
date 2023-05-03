@@ -4,6 +4,8 @@
 
 <!--LISTA DE OPCIONES-->
 
+    <!--008. SE UTILIZA DIRECTIVA *ngFor PARA RECORRER LISTA DE tags-->
+    <!--013. SE LLAMA A LA FUNCION buscartag() BAJO EVENTBINDING (click)-->
     <a *ngFor="let tag of tags" (click)="buscartag(tag)" class="list-group-item list-group-item-action">
       <button>
         {{ tag | titlecase}}

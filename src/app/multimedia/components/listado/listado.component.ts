@@ -8,6 +8,7 @@ import { Multimedia } from '../../interfaces/multi.interfaces';
 })
 export class ListadoComponent {
 
+  //036. SE RECEPCIONA EL OBJETO multi Y SE LE LLAMA multis PARA SU USO POR MEDIO DE Input()
   @Input()
   public multis: Multimedia[] = []  
 

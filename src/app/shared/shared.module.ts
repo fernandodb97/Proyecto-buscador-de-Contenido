@@ -8,24 +8,23 @@ import { MultimediaModule } from '../multimedia/multimedia.module';
 
 @NgModule({
 
-  //MODULOS HIJOS A IMPORTAR PARA SER USADOS EN LOS exports:[] POR EL MODULO PADRE
+  //M4. SE DECLARA EL COMPONENTE PRINCIPAL
   declarations: [
     SidebarComponent
   ],
 
-  //MODULOS IMPORTADOS CON FUNCIONES DE ANGULAR IMPORTANTES PARA SU USO
+  //M5. EL COMPONENTE PRINCIPAL IMPORTA TODOS LOS MODULOSDE 3EROS JUNTO A LOS PROPIOS
   imports: [
     CommonModule,
     MultimediaModule
-
   ],
 
-  //AQUI VA EL MODULO PADRE DONDE SE VAN A UTILIZAR LOS MODULOS HIJOS declarations:[]
+  //M6. AQUI VA EL MODULO A EXPORTARSE PARA UTILIZAR EN FUTUROS MODULOS QUE LO IMPORTEN
   exports:[
     SidebarComponent
   ],
 
-  //AQUI VAN LOS SERVICIOS A INJECTAR EN LOS DEMÁS MODULOS
+  //M7. AQUI VAN LOS SERVICIOS A INJECTAR EN LOS DEMÁS MODULOS
   providers:[
     MultimediaService
   ]

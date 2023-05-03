@@ -1,25 +1,32 @@
+//MODULOS DE ANGULAR
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
+//MODULOS Y COMPONENTES PROPIOS
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { MultimediaModule } from './multimedia/multimedia.module';
-import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
+
+  //M1. SE DECLARA EL COMPONENTE PRINCIPAL
   declarations: [
     AppComponent
   ],
 
-  //EL MODULO PRINCIPAL IMPORTA TODOS LOS MODULOS "HIJOS" JUNTO A LOS PROPIOS QUE IMPORTEN FUNCIONES DE 3EROS
+  //M2. EL COMPONENTE PRINCIPAL IMPORTA TODOS LOS MODULOSDE 3EROS JUNTO A LOS PROPIOS
   imports: [
     SharedModule,
-    BrowserModule,
     MultimediaModule,
-    HttpClientModule
 
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
+
+  //M3. PARA HACER REFERENCIA A LOS ESTILOS EN PASO .001
   bootstrap: [AppComponent]
 })
 export class AppModule { }
